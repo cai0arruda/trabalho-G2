@@ -4,10 +4,10 @@
             <h1 class="titulo-menu">Sistema de Currículos</h1>
         </div>
         <div class="botoes">
-            <a href="cadastros.php"><button class="botao-menu">Currículos Cadastrados</button></a>
+            <a href="curriculos-cadastrados.php"><button class="botao-menu">Currículos Cadastrados</button></a>
         </div>
         <div class="botoes">
-            <a href="cadastros.php"><button class="botao-menu">Cadastrar Novo Currículo</button></a>
+            <a href="cadastro.php"><button class="botao-menu">Cadastrar Novo Currículo</button></a>
         </div>
         <div class="botoes">
             <a href="cadastros.php"><button class="botao-menu">Consultar Cadastro de Um Currículo</button></a>
