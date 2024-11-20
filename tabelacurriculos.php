@@ -28,7 +28,7 @@ function gerarTabelaCurriculos($stmt) {
             echo "<td>" . $row['nome'] . "</td>";
             echo "<td>" . $row['email'] . "</td>";
             echo "<td>
-                    <a class='btn1' href='editarevento.php?id=" . $row['id'] . "'>Visualizar</a>
+                    <a class='btn1' href='visualizar.php?id=" . $row['id'] . "'>Visualizar</a>
                 </td>";
             echo "</tr>";
         }

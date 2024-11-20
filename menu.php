@@ -9,8 +9,5 @@
         <div class="botoes">
             <a href="cadastro.php"><button class="botao-menu">Cadastrar Novo Currículo</button></a>
         </div>
-        <div class="botoes">
-            <a href="cadastros.php"><button class="botao-menu">Consultar Cadastro de Um Currículo</button></a>
-        </div>
     </div>
 </div>

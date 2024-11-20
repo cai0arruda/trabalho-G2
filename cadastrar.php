@@ -8,7 +8,7 @@
         
         <!-- Telefone -->
         <label for="telefone">Telefone</label>
-        <input type="text" id="telefone" name="telefone">
+        <input type="tel" id="telefone" name="telefone" pattern="[0-9]{11}" placeholder="DD123456789">
 
         <!-- E-mail -->
         <label for="email">Endereço de E-mail (Obrigatório)</label>
