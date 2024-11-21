@@ -4,23 +4,24 @@ $sql = "SELECT * FROM usuario ORDER BY nome ASC";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 
-// Chama a função para gerar a tabela de eventos
+// Chama a função para gerar a tabela de currículos
 gerarTabelaCurriculos($stmt);
 
 // Fecha a conexão com o banco de dados
 $conn = null;
+
 function gerarTabelaCurriculos($stmt) {
     if ($stmt->rowCount() > 0) {
         echo 
-        "<div>
-        <table class='table table-striped table-responsive'>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>";
+        "<div class='container-curriculos'>
+            <table class='table table-striped table-responsive'>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>";
         
         // Loop através dos resultados e exibe-os
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -32,10 +33,15 @@ function gerarTabelaCurriculos($stmt) {
                 </td>";
             echo "</tr>";
         }
-        echo "</table>
-            </div";
+        echo "</table>";
+
+        // Botão de voltar ao index
+        echo "<a href='index.php' class='btn-voltar'>Voltar</a>";
+
+        echo "</div>";
     } else {
-        echo "Não há curriculos cadastrados.";
+        echo "<div class='nao-ha-curriculos'>Nenhum currículo cadastrado.</div>";
+        echo "<a href='index.php' class='btn-voltar'>Voltar</a>";
     }
 }
 ?>

@@ -45,11 +45,23 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                 </div>
             </div>
         </main>
+        <a href='curriculos-cadastrados.php' class='btn-voltar'>Voltar</a>
 <?php
     } else {
-        echo "<p>Usuário não encontrado.</p>";
+        echo
+        "<div class='container'>
+            <div class='container-menu'>
+                <p class='nao-ha-curriculos'>Usuário não encontrado.</p>
+            </div>
+        </div>";
     }
 } else {
-    echo "<p>ID de usuário inválido.</p>";
+    echo
+        "<div class='container'>
+            <div class='container-menu'>
+                <p class='nao-ha-curriculos'>ID de usuário inválido.</p>
+            </div>
+        </div>";
 }
+    echo "<a href='curriculos-cadastrados.php' class='btn-voltar'>Voltar</a>";
 ?>
