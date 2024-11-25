@@ -18,7 +18,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                 <div class="container-menu">
                     <!-- Tabela com os detalhes do usuário -->
                     <div class="table-responsive">
-                    <h2>Informações do Usuário</h2>
+                    <h2>Informações do Currículo</h2>
                         <table class="table table-striped">
                             <thead>
                                 <tr>

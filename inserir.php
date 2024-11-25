@@ -2,7 +2,7 @@
 
 include "pdoconfig.php";
 
-$mensagem = ""; // Inicializa a mensagem como vazia
+$mensagem = ""; 
 
 // Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -11,10 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             // Função para limpar e validar o nome
             function limparNome($nome) {
-                $nome = preg_replace("/[^a-zA-Z ]/", "", $nome); // Remove caracteres inválidos
-                $nome = preg_replace("/\s+/", " ", $nome);       // Substitui múltiplos espaços por um único
-                return trim($nome);                             // Remove espaços extras no início e no fim
-            }
+                // Remove caracteres inválidos, mantendo letras (incluindo acentuadas), espaços e o apóstrofo
+                $nome = preg_replace("/[^a-zA-ZÀ-ÖØ-öø-ÿ' ]/u", "", $nome); 
+                // Substitui múltiplos espaços por um único
+                $nome = preg_replace("/\s+/", " ", $nome);       
+                // Remove espaços extras no início e no fim
+                return trim($nome);                             
+            }            
 
             // Função para limpar e validar o telefone
             function limparTelefone($telefone) {
@@ -37,8 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Função para validar experiência profissional
             function limparExperiencia($texto) {
-                return preg_replace("/[^a-zA-Z0-9 ]/", "", $texto); // Remove caracteres especiais
-            }
+                // Remove caracteres que não sejam letras (incluindo acentuadas), números, espaços ou pontuação
+                return preg_replace("/[^a-zA-ZÀ-ÖØ-öø-ÿ0-9.,;!?()'\" -]/u", "", $texto);
+}
+
 
             // Aplicação das validações nos campos
             $nome = limparNome($_POST["nome"]);
